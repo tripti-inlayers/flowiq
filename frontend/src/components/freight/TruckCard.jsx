@@ -34,11 +34,11 @@ export default function TruckCard({ truck }) {
           {truck.available_kg} kg available
         </span>
 
-        {truck.rate_min && (
+        {truck.estimated_cost_min && (
           <span className='bg-green-50 text-green-700 px-2 py-1 rounded font-medium'>
-            ₹{truck.rate_min}–₹{truck.rate_max}
+            ₹{truck.estimated_cost_min}–₹{truck.estimated_cost_max}
           </span>
-        )}
+          )}
 
         {truck.pooling_available && (
           <span className='bg-amber-50 text-amber-700 px-2 py-1 rounded font-medium'>

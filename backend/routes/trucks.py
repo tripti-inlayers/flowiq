@@ -21,3 +21,13 @@ def post_truck(truck: TruckIn):
 def get_trucks():
     result = supabase.table('trucks').select('*').execute()
     return result.data
+@router.get("/{truck_id}/manifest")
+def get_manifest(truck_id: str):
+    result = (
+        supabase.table("cargo_manifests")
+        .select("*")
+        .eq("truck_id", truck_id)
+        .execute()
+    )
+
+    return result.data

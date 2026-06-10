@@ -16,7 +16,7 @@ export default function Home() {
     {
       title: '🏪 Kirana Command Center',
       description: 'Monitor hyper-local inventory runout risks, view active festival demand spikes, and instantly request linehaul freight matching.',
-      link: '/restock', // Adjust these paths to match your React Router setup if needed
+      link: '/kirana', // Adjust these paths to match your React Router setup if needed
       buttonText: 'Open Dashboard',
       borderColor: 'hover:border-teal-400',
       tag: 'Phase 4'
@@ -24,7 +24,7 @@ export default function Home() {
     {
       title: '🚚 Freight Intelligence & Matching',
       description: 'Search available truck capacities, analyze deep cargo manifests, and post live trucks or consumer loads into the system.',
-      link: '/freight',
+      link: '/kirana',
       buttonText: 'Find Matches',
       borderColor: 'hover:border-blue-400',
       tag: 'Phase 5'
@@ -32,7 +32,7 @@ export default function Home() {
     {
       title: '📋 Transparent Bookings Tracking',
       description: 'Audit transactional workflow states from "requested" to "accepted" and track cargo distribution lines end-to-end.',
-      link: '/bookings',
+      link: '/matches',
       buttonText: 'Track Bookings',
       borderColor: 'hover:border-indigo-400',
       tag: 'Phase 5'

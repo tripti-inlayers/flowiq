@@ -1,6 +1,7 @@
 
 // src/pages/Home.jsx
 import React from 'react';
+// import { getBookings, updateBookingStatus } from '../utils/api';
 
 export default function Home() {
   // Mock metrics to give the app an instant "live enterprise" feel for demos
@@ -19,15 +20,15 @@ export default function Home() {
       link: '/kirana', // Adjust these paths to match your React Router setup if needed
       buttonText: 'Open Dashboard',
       borderColor: 'hover:border-teal-400',
-      tag: 'Phase 4'
+      // tag: 'Phase 4'
     },
     {
       title: '🚚 Freight Intelligence & Matching',
       description: 'Search available truck capacities, analyze deep cargo manifests, and post live trucks or consumer loads into the system.',
-      link: '/kirana',
+      link: '/matches',
       buttonText: 'Find Matches',
       borderColor: 'hover:border-blue-400',
-      tag: 'Phase 5'
+      // tag: 'Phase 5'
     },
     {
       title: '📋 Transparent Bookings Tracking',
@@ -35,7 +36,7 @@ export default function Home() {
       link: '/matches',
       buttonText: 'Track Bookings',
       borderColor: 'hover:border-indigo-400',
-      tag: 'Phase 5'
+      // tag: 'Phase 5'
     }
   ];
 

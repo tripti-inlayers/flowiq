@@ -20,7 +20,7 @@ export default function Home() {
       link: '/kirana', // Adjust these paths to match your React Router setup if needed
       buttonText: 'Open Dashboard',
       borderColor: 'hover:border-teal-400',
-      tag: 'Phase 4'
+      // tag: 'Phase 4'
     },
     {
       title: '🚚 Freight Intelligence & Matching',
@@ -28,7 +28,7 @@ export default function Home() {
       link: '/matches',
       buttonText: 'Find Matches',
       borderColor: 'hover:border-blue-400',
-      tag: 'Phase 5'
+      // tag: 'Phase 5'
     },
     {
       title: '📋 Transparent Bookings Tracking',
@@ -36,7 +36,7 @@ export default function Home() {
       link: '/bookings',
       buttonText: 'Track Bookings',
       borderColor: 'hover:border-indigo-400',
-      tag: 'Phase 5'
+      // tag: 'Phase 5'
     }
   ];
 

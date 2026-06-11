@@ -2,6 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routes import trucks, loads, matches, sales, alerts, stores, bookings
+from auth import router as auth_router
 app = FastAPI(title='FlowIQ API')
 # CORS — allows your React frontend (localhost:5173) to talk to this backend
 app.add_middleware(
@@ -21,6 +22,7 @@ app.include_router(sales.router, prefix="/sales", tags=["Sales"])
 app.include_router(alerts.router, prefix="/alerts", tags=["Alerts"])
 app.include_router(stores.router, prefix="/stores", tags=["Stores"])
 app.include_router(bookings.router, prefix="/bookings", tags=["Bookings"])
+app.include_router(auth_router.router)
 
 @app.get('/')
 def root():

@@ -131,4 +131,3 @@ def logout():
 def me(current_user: dict = Depends(get_current_user)):
     """Return the currently authenticated user's profile."""
     return current_user
-

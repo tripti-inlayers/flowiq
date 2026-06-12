@@ -44,8 +44,8 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50 font-sans">
       {/* Hero Header Section */}
       <div className="bg-gradient-to-r from-slate-900 to-teal-950 text-white py-12 px-6 shadow-md">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-3 mb-2">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="flex justify-center gap-3 mb-2">
             <span className="text-2xl bg-teal-500/20 text-teal-400 px-3 py-1 rounded-md border border-teal-500/30 font-mono font-bold text-sm tracking-widest">
               FLOWIQ ENGINE
             </span>
@@ -53,7 +53,7 @@ export default function Home() {
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
             Next-Gen Kirana Logistics Platform
           </h1>
-          <p className="mt-3 max-w-2xl text-base text-slate-300 leading-relaxed">
+          <p className="mt-3 max-w-2xl mx-auto text-base text-slate-300 leading-relaxed">
             Automating FMCG distribution pipelines by pairing micro-demand alerts with real-time freight capacities instantly.
           </p>
         </div>

@@ -1,10 +1,12 @@
 // src/pages/Bookings.jsx
 import React, { useState, useEffect } from 'react';
+import ShipmentTracker from "../components/tracking/ShipmentTracker";
 // Import your API utility if preferred, or use fetch directly as per the guide guidelines
 // import { getBookings, updateBookingStatus } from '../utils/api'; 
 
 export default function Bookings() {
   const [bookings, setBookings] = useState([]);
+  const [selectedBooking, setSelectedBooking] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -166,14 +168,24 @@ export default function Bookings() {
                         </td>
 
                         {/* Action buttons allowing manual testing transitions */}
+  
                         <td className="p-4 text-right">
                           {booking.status !== "delivered" && booking.status !== "cancelled" ? (
-                            <button
-                              onClick={() => advanceStatus(booking.id, booking.status)}
-                              className="text-xs font-bold bg-slate-800 hover:bg-slate-900 text-white py-1.5 px-3.5 rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-500"
-                            >
-                              Mark {NEXT_STATUS[booking.status]}
-                            </button>
+                            <>
+                              <button
+                                onClick={() => setSelectedBooking(booking)}
+                                className="mr-2 text-xs font-bold bg-orange-500 hover:bg-orange-600 text-white py-1.5 px-3.5 rounded-lg transition-colors"
+                              >
+                                Track
+                              </button>
+
+                              <button
+                                onClick={() => advanceStatus(booking.id, booking.status)}
+                                className="text-xs font-bold bg-slate-800 hover:bg-slate-900 text-white py-1.5 px-3.5 rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-500"
+                              >
+                                Mark {NEXT_STATUS[booking.status]}
+                              </button>
+                            </>
                           ) : (
                             <span className="text-xs font-semibold text-slate-400 italic pr-2">
                               Transaction Concluded
@@ -190,6 +202,15 @@ export default function Bookings() {
           </div>
         )}
       </div>
+
+      {selectedBooking && (
+        <ShipmentTracker
+          booking={selectedBooking}
+          load={selectedBooking.loads}
+          truck={selectedBooking.trucks}
+          onClose={() => setSelectedBooking(null)}
+        />
+      )}
     </div>
   );
 }

@@ -172,12 +172,14 @@ export default function Bookings() {
                         <td className="p-4 text-right">
                           {booking.status !== "delivered" && booking.status !== "cancelled" ? (
                             <>
+                              {booking.status === "in_transit" && (
                               <button
                                 onClick={() => setSelectedBooking(booking)}
                                 className="mr-2 text-xs font-bold bg-orange-500 hover:bg-orange-600 text-white py-1.5 px-3.5 rounded-lg transition-colors"
                               >
                                 Track
                               </button>
+                            )}
 
                               <button
                                 onClick={() => advanceStatus(booking.id, booking.status)}

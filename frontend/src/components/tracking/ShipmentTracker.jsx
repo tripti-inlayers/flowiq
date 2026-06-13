@@ -89,9 +89,12 @@ export default function ShipmentTracker({ booking, load, truck, onClose }) {
     }, 600);
   };
 
-  const progressPct = waypoints.length > 1
-    ? Math.round((currentIdx / (waypoints.length - 1)) * 100)
-    : 0;
+  const progressPct =
+  booking.status === "delivered"
+    ? 100
+    : waypoints.length > 1
+      ? Math.round((currentIdx / (waypoints.length - 1)) * 100)
+      : 0;
 
   const isDelivered = currentIdx >= waypoints.length - 1;
   const statusMeta  = STATUS_META[booking.status] || STATUS_META.requested;
@@ -147,7 +150,7 @@ export default function ShipmentTracker({ booking, load, truck, onClose }) {
             <div className="px-4 py-2 border-b border-slate-600 text-xs font-bold text-slate-400 uppercase tracking-wider">
               Notifications
             </div>
-            {notifications.length === 0 ? (
+            {notifications.length == 0 ? (
               <p className="text-slate-500 text-xs px-4 py-3">No updates yet.</p>
             ) : (
               <ul className="divide-y divide-slate-700 max-h-40 overflow-y-auto">
@@ -205,10 +208,17 @@ export default function ShipmentTracker({ booking, load, truck, onClose }) {
             <div className="h-2.5 bg-slate-700 rounded-full overflow-hidden">
               <div
                 className="h-full rounded-full transition-all duration-700 ease-in-out"
+                
                 style={{
                   width: `${progressPct}%`,
-                  background: "linear-gradient(90deg, #3b82f6, #f97316)",
+                  background:
+                    booking.status === "delivered"
+                      ? "linear-gradient(90deg, #22c55e, #16a34a)"
+                      : booking.status === "accepted"
+                      ? "linear-gradient(90deg, #3b82f6, #06b6d4)"
+                      : "linear-gradient(90deg, #3b82f6, #f97316)",
                 }}
+
               />
             </div>
             <div className="text-right text-[11px] text-slate-500 mt-1">

@@ -1,20 +1,68 @@
-// src/components/shared/Navbar.jsx
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Navbar() {
-  return (
-    <nav className='bg-blue-700 text-white px-6 py-3 flex gap-6 items-center shadow-sm'>
-      <span className='font-bold text-lg mr-4 tracking-tight'>FlowIQ</span>
-      <Link to='/' className='hover:text-blue-200 transition-colors font-medium text-sm'>Home</Link>
-      <Link to='/post-truck' className='hover:text-blue-200 transition-colors font-medium text-sm'>Post Truck</Link>
-      <Link to='/post-load' className='hover:text-blue-200 transition-colors font-medium text-sm'>Post Load</Link>
-      <Link to='/matches' className='hover:text-blue-200 transition-colors font-medium text-sm'>Find Matches</Link>
-      <Link to='/kirana' className='hover:text-blue-200 transition-colors font-medium text-sm'>Kirana Dashboard</Link>
-      
-      {/* Phase 5 Step 17: Exposed lifecycle bookings contract link */}
-      <Link to='/bookings' className='hover:text-blue-200 transition-colors font-medium text-sm border-l border-blue-500 pl-4 ml-2'>
-        Bookings
-      </Link>
-    </nav>
-  );
+const { user, logout } = useAuth();
+const location = useLocation();
+const navigate = useNavigate();
+
+// Hide navbar on login page
+if (location.pathname === '/login') return null;
+
+const handleLogout = async () => {
+await logout();
+navigate('/login');
+};
+
+const role = user?.role;
+
+return ( <nav className='bg-blue-700 text-white px-6 py-3 flex gap-6 items-center shadow-sm'> <span className='font-bold text-lg mr-4 tracking-tight'>
+FlowIQ </span>
+
+  {/* Admin */}
+  {role === 'admin' && (
+    <>
+      <Link to='/'>Home</Link>
+      <Link to='/post-truck'>Post Truck</Link>
+      <Link to='/post-load'>Post Load</Link>
+      <Link to='/matches'>Find Matches</Link>
+      <Link to='/kirana'>Kirana Dashboard</Link>
+      <Link to='/bookings'>Bookings</Link>
+    </>
+  )}
+
+  {/* Shipper */}
+  {role === 'shipper' && (
+    <>
+      <Link to='/post-load'>Post Load</Link>
+      <Link to='/matches'>Find Matches</Link>
+      <Link to='/bookings'>Bookings</Link>
+    </>
+  )}
+
+  {/* Driver */}
+  {role === 'driver' && (
+    <>
+      <Link to='/post-truck'>Post Truck</Link>
+      <Link to='/bookings'>Bookings</Link>
+    </>
+  )}
+
+  {/* Kirana Owner */}
+  {role === 'kirana_owner' && (
+    <>
+      <Link to='/kirana'>Kirana Dashboard</Link>
+      <Link to='/bookings'>Bookings</Link>
+    </>
+  )}
+
+  <button
+    onClick={handleLogout}
+    className='ml-auto bg-red-500 hover:bg-red-600 px-3 py-1 rounded text-sm font-semibold'
+  >
+    Logout
+  </button>
+</nav>
+
+);
 }

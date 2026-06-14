@@ -25,7 +25,10 @@ function ExpandableTruckRow({ truck }) {
 
     setLoadingManifest(true);
     try {
-      const res = await fetch(`http://127.0.0.1:8000/trucks/${truck.id}/manifest`);
+      const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
+
+      const res = await fetch(`${API_BASE}/trucks/${truck.id}/manifest`);
+      
       if (!res.ok) throw new Error("Manifest not found");
       const data = await res.json();
       setManifest(data);

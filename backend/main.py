@@ -26,7 +26,7 @@ app.include_router(sales.router, prefix="/sales", tags=["Sales"])
 app.include_router(alerts.router, prefix="/alerts", tags=["Alerts"])
 app.include_router(stores.router, prefix="/stores", tags=["Stores"])
 app.include_router(bookings.router, prefix="/bookings", tags=["Bookings"])
-app.include_router(auth_router.router)
+app.include_router(auth_router.router, prefix="/auth", tags=["Auth"])
 
 @app.get('/')
 def root():

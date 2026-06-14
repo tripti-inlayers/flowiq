@@ -398,11 +398,12 @@ FlowIQ is built with extensibility in mind. Planned enhancements include:
 
 This project was built as part of a hackathon submission.
 
-| Name | GitHub |
-|---|---|---|
-| _Tripti Patel_ | [tripti-inlayers](https://github.com/) |
-| _Raghib Aftab_ | [raghib-aftab](https://github.com/) |
+This project was built as part of a hackathon submission.
 
+| Name | GitHub |
+|------|--------|
+| Tripti Patel | [tripti-inlayers](https://github.com/tripti-inlayers) |
+| Raghib Aftab | [raghib-aftab](https://github.com/raghib-aftab) |
 ---
 
 <div align="center">

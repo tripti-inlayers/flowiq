@@ -21,11 +21,9 @@
 
 **FlowIQ** is a logistics and freight coordination platform that connects shippers, drivers, and kirana store owners through load matching, booking management, and shipment tracking.
 
-[🚀 Live Demo](#deployment) · [📖 Docs](#setup--installation) · [🐛 Report Bug](issues) · [✨ Request Feature](issues)
+[🚀 Live Demo](https://flowiq-swart.vercel.app) · [📖 Setup Guide](#setup--installation) · [🐛 Report Bug](https://github.com/tripti-inlayers/flowiq/issues)
 
 <br/>
-
-![FlowIQ Banner Placeholder](https://via.placeholder.com/900x300/1E293B/E87722?text=FlowIQ+%E2%80%94+Logistics+Intelligence+Platform)
 
 </div>
 
@@ -377,7 +375,7 @@ FlowIQ is deployed across three platforms:
 5. Add all backend environment variables
 6. Deploy
 
-> 💡 **Cold starts:** Render's free tier sleeps after 15 minutes of inactivity. Open `https://your-backend.onrender.com/docs` a couple of minutes before your demo to wake it up.
+> 💡 **Cold starts:** Render's free tier sleeps after 15 minutes of inactivity. Open `https://flowiq-backend-2uvf.onrender.com/docs#/` a couple of minutes before your demo to wake it up.
 
 ---
 
@@ -400,10 +398,10 @@ FlowIQ is built with extensibility in mind. Planned enhancements include:
 
 This project was built as part of a hackathon submission.
 
-| Name | Role | GitHub |
+| Name | GitHub |
 |---|---|---|
-| _(Add your name)_ | _(Your role)_ | [@handle](https://github.com/) |
-| _(Add your name)_ | _(Your role)_ | [@handle](https://github.com/) |
+| _Tripti Patel_ | [tripti-inlayers](https://github.com/) |
+| _Raghib Aftab_ | [raghib-aftab](https://github.com/) |
 
 ---
 

@@ -398,8 +398,6 @@ FlowIQ is built with extensibility in mind. Planned enhancements include:
 
 This project was built as part of a hackathon submission.
 
-This project was built as part of a hackathon submission.
-
 | Name | GitHub |
 |------|--------|
 | Tripti Patel | [tripti-inlayers](https://github.com/tripti-inlayers) |

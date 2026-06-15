@@ -335,16 +335,13 @@ FlowIQ implements role-based access control across every route and API endpoint.
 
 ## 📸 Screenshots
 
-> _Screenshots will be added after final deployment._
-
 | Page | Preview |
 |---|---|
-| Login | ![Login](https://via.placeholder.com/600x350/1E293B/E87722?text=Login+Page) |
-| Load Matching | ![Matching](https://via.placeholder.com/600x350/1E293B/E87722?text=Match+Discovery) |
-| Booking Management | ![Bookings](https://via.placeholder.com/600x350/1E293B/E87722?text=Booking+Management) |
-| Shipment Tracker | ![Tracker](https://via.placeholder.com/600x350/1E293B/E87722?text=Shipment+Tracker) |
-| Kirana Dashboard | ![Kirana](https://via.placeholder.com/600x350/1E293B/E87722?text=Kirana+Dashboard) |
-
+| Login | ![Login](./screenshots/login.png) |
+| Load Matching | ![Matching](./screenshots/matching.png) |
+| Booking Management | ![Bookings](./screenshots/bookings.png) |
+| Shipment Tracker | ![Tracker](./screenshots/tracker.png) |
+| Kirana Dashboard | ![Kirana](./screenshots/kirana.png) |
 ---
 
 ## 🚀 Deployment

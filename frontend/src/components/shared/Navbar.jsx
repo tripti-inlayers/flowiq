@@ -16,7 +16,7 @@ navigate('/login');
 
 const role = user?.role;
 
-return ( <nav className='bg-blue-700 text-white px-6 py-3 flex gap-6 items-center shadow-sm'> <span className='font-bold text-lg mr-4 tracking-tight'>
+return ( <nav className='relative z-50 bg-blue-700 text-white px-6 py-3 flex gap-6 items-center shadow-sm'> <span className='font-bold text-lg mr-4 tracking-tight'>
 FlowIQ </span>
 
   {/* Admin */}

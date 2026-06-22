@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import ShipmentTracker from "../components/tracking/ShipmentTracker";
 // Import your API utility if preferred, or use fetch directly as per the guide guidelines
 // import { getBookings, updateBookingStatus } from '../utils/api'; 
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 export default function Bookings() {
   const [bookings, setBookings] = useState([]);
@@ -31,7 +32,7 @@ export default function Bookings() {
     try {
       setLoading(true);
       // Fallback directly to fetch if your api.js isn't imported globally
-      const res = await fetch("http://localhost:8000/bookings");
+      const res = await fetch(`${API_BASE}/bookings`);
       if (!res.ok) throw new Error("Failed to fetch system bookings pipeline data");
       const data = await res.json();
       setBookings(data);
@@ -52,7 +53,7 @@ export default function Bookings() {
     if (!next) return;
 
     try {
-      const res = await fetch(`http://localhost:8000/bookings/${bookingId}`, {
+      const res = await fetch(`${API_BASE}/bookings/${bookingId}`,{
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: next }),

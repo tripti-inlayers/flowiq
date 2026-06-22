@@ -1,6 +1,12 @@
 backend/.env
 .env
 .env.backup
+.env.local
+.env.development
+.env.production
+.env.development.local
+.env.production.local
+
 
 __pycache__/
 *.pyc
